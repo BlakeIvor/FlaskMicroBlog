@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.eggs/
+dist/
+build/
+sdist/
+*.egg-info/
+*.whl
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# PyInstaller
+#  Usually these files are built in a _MEIPASS/ folder, but if you give the --onefile
+# flag, they get unpacked in the current directory instead.
+_MEIPASS/
+_MEIPASS2/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+nosetests.xml
+*.log
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.db
+*.pyc
+*/settings/local.py
+/static/*
+/media/*
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx stuff:
+docs/_build
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.sock
+
+# Open VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Other
+*.swp
+*~
+tmp/
