@@ -9,6 +9,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 
 app = Flask(__name__)
+
 app.config.from_object(Config)
 print(f"Static folder path: {os.path.join(app.root_path, 'static')}")
 

@@ -40,8 +40,8 @@ class User(UserMixin,db.Model):
         secondary=followers, primaryjoin=(followers.c.followed_id == id),
         secondaryjoin=(followers.c.follower_id == id),
         back_populates='following'
-    
-    
+    )
+
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
