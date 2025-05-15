@@ -7,9 +7,10 @@ from logging.handlers import RotatingFileHandler
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_moment import Moment
 
 app = Flask(__name__)
-
+moment = Moment(app)
 app.config.from_object(Config)
 print(f"Static folder path: {os.path.join(app.root_path, 'static')}")
 
