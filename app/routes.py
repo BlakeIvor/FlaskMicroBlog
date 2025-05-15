@@ -167,3 +167,20 @@ def explore():
     prev_url = url_for('explore', page=posts.prev_num) \
         if posts.has_prev else None
     return render_template('index.html', title='Explore', posts=posts.items, next_url=next_url, prev_url=prev_url)
+
+@app.route('/search')
+@login_required
+def search():
+    if not request.args.get('q'):
+        return redirect(url_for('explore'))
+    
+    page = request.args.get('page', 1, type=int)
+    query = sa.select(User).where(User.username.ilike(f"%{request.args.get('q')}%"))
+    users = db.paginate(query, page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
+    
+    next_url = url_for('search', q=request.args.get('q'), page=users.next_num) \
+        if users.has_next else None
+    prev_url = url_for('search', q=request.args.get('q'), page=users.prev_num) \
+        if users.has_prev else None
+    
+    return render_template('search.html', title='Search', users=users.items, next_url=next_url, prev_url=prev_url, query=request.args.get('q'))

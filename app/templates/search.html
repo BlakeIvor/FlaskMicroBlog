@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Search Results</h1>
+                    <p>Searching for: {{ query }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="list-group">
+                        {% for user in users %}
+                        <a href="{{ url_for('user', username=user.username) }}" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ user.username }}</h5>
+                                <small class="text-muted">{{ user.about_me }}</small>
+                            </div>
+                            <p class="mb-1">{{ user.followers_count() }} followers, {{ user.following_count() }} following</p>
+                            {% if user != current_user %}
+                            <form action="{{ url_for('follow', username=user.username) }}" method="post" class="d-inline">
+                                {{ form.hidden_tag() }}
+                                {% if current_user.is_following(user) %}
+                                    {{ form.submit(value='Unfollow', class_='btn btn-outline-secondary btn-sm') }}
+                                {% else %}
+                                    {{ form.submit(value='Follow', class_='btn btn-primary btn-sm') }}
+                                {% endif %}
+                            </form>
+                            {% endif %}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="Search navigation">
+                <ul class="pagination">
+                    <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                        <a class="page-link" href="{{ prev_url }}">
+                            <span aria-hidden="true">&larr;</span> Newer users
+                        </a>
+                    </li>
+                    <li class="page-item{% if not next_url %} disabled{% endif %}">
+                        <a class="page-link" href="{{ next_url }}">
+                            Older users <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
