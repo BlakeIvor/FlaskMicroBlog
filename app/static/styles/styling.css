@@ -24,6 +24,11 @@ body {
     color: var(--discord-text) !important;
 }
 
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .nav-link:hover {
     color: var(--discord-accent) !important;
 }

@@ -1,4 +1,7 @@
-2025-05-15 00:07:08,329 ERROR: Exception on /user/Person2 [GET] [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py:875]
+2025-05-14 23:32:11,514 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
+2025-05-15 00:00:44,460 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
+2025-05-15 00:05:34,223 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
+2025-05-15 00:05:37,109 ERROR: Exception on /user/Person2 [GET] [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
     self.dialect.do_execute(
@@ -19,7 +22,7 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
   File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\routes.py", line 78, in user
+  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\routes.py", line 74, in user
     return render_template('user.html', user=user, posts=posts, form=form)
   File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\templating.py", line 150, in render_template
     return _render(app, template, context)
@@ -68,31 +71,4 @@ FROM user, followers
 WHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1]
 [parameters: (2,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
-2025-05-15 00:07:30,298 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 00:07:48,377 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 00:07:54,869 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 00:07:58,925 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 00:08:11,015 ERROR: Exception on /user/Susan [GET] [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py:875]
-Traceback (most recent call last):
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\BlogVenv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\routes.py", line 72, in user
-    abort(404)
-NameError: name 'abort' is not defined
-2025-05-15 00:10:19,211 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 00:10:25,656 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 02:01:25,909 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 03:30:51,661 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]
-2025-05-15 04:45:58,021 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:40]
-2025-05-15 04:50:40,623 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:40]
-2025-05-15 05:06:07,534 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:40]
-2025-05-15 05:24:34,249 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:41]
-2025-05-15 05:42:16,301 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:41]
+2025-05-15 00:07:05,072 INFO: Microblog startup [in C:\Users\Blaika\Desktop\2025SummerProjects\ProjectBasedLearning\FlaskMicroBlog\app\__init__.py:39]

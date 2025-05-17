@@ -183,4 +183,5 @@ def search():
     prev_url = url_for('search', q=request.args.get('q'), page=users.prev_num) \
         if users.has_prev else None
     
-    return render_template('search.html', title='Search', users=users.items, next_url=next_url, prev_url=prev_url, query=request.args.get('q'))
+    form = EmptyForm()
+    return render_template('search.html', title='Search', users=users.items, next_url=next_url, prev_url=prev_url, query=request.args.get('q'), form=form)
