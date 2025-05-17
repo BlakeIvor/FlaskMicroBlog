@@ -70,3 +70,4 @@ dmypy.sock
 *.swp
 *~
 tmp/
+app.db
